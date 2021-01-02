@@ -1,16 +1,16 @@
 :root{
 
   --bg:#fd3a69;
-  --btn1:#fecd1a;
-  --btn2:#120078;
-  --btn3:#9d0191;
-  --btn4:#008891;
+  --btn1:#00ff7c;
+  --btn2:blue;
+  --btn3:yellow;
+  --btn4:#be03fd;
 
     /* --bg:#fd3a69;
-    --btn1:blue;
-    --btn2:red;
-    --btn3:green;
-    --btn4:black; */
+    --btn1:#120078;
+    --btn2:#fecd1a;
+    --btn3:#9d0191;
+    --btn4:#008891; */
 }
 
 *{
@@ -25,7 +25,7 @@ body{
 
 }
 
-button{
+.btn{
   width: 250px;
   height: 250px;
   margin: 1rem;
@@ -50,6 +50,20 @@ footer{
   margin: 40px 0 0 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
   padding: 30px;
+}
+
+
+
+.theme{
+  position: absolute;
+  right: 10px;
+  top:5px;
+  background: white;
+  padding: 10px;
+  border: 5px solid;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: black;
 }
 
 
