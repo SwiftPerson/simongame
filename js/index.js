@@ -21,7 +21,8 @@ var userLevel = 1;
 var isOn = false;
 var playdemo = [];
 var usrselect = [];
-
+var backgroundThemes = ["#fd3a69","black"];
+var bgColor = backgroundThemes[0];
 $("button").click(function(event) {
   var btn = event.target;
   playSound(btn.classList[0]);
@@ -162,7 +163,7 @@ function pressAnime(btn) {
   $("." + btn).addClass("pressed");
   setTimeout(function() {
     $("." + btn).removeClass("pressed");
-    $("body").css("background-color","#fd3a69");
+    $("body").css("background-color",bgColor);
   }, 200);
 
 
@@ -257,6 +258,7 @@ function lose() {
   var audio = new Audio("sounds/error.wav");
   audio.play();
   colorAlert("red",400);
+  $("h1").css("color","red");
 }
 
 function win() {
@@ -288,8 +290,42 @@ function colorAlert(color,delay){
   $("body").css("background-color",color);
 
   setTimeout(function() {
-    $("body").css("background-color","#fd3a69");
+    $("body").css("background-color",bgColor);
   }, delay);
+
+}
+
+var Darktheme = false;
+$(".theme").on("click",function(){
+
+  Darktheme = !Darktheme;
+
+  if(Darktheme){
+    bgColor = backgroundThemes[1];
+    changeColor("body",bgColor,"element");
+    $(".theme").text("Go Light")
+
+  }else{
+
+    bgColor = backgroundThemes[0];
+    changeColor("body",bgColor,"element");
+    $(".theme").text("Go Light")
+
+  }
+
+
+
+});
+
+
+function changeColor(object,color,type){
+if(type === "element"){
+  $(object).css("background-color",color);
+}else if(type === "class"){
+  $("."+object).css("background-color",color);
+}else if(type === "tag"){
+  $("#"+object).css("background-color",color);
+}
 
 }
 //end of file
