@@ -309,7 +309,7 @@ $(".theme").on("click",function(){
 
     bgColor = backgroundThemes[0];
     changeColor("body",bgColor,"element");
-    $(".theme").text("Go Light")
+    $(".theme").text("Go Dark")
 
   }
 
