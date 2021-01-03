@@ -11,6 +11,10 @@
     --btn4:#008891; */
 }
 
+html, body {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -29,7 +33,7 @@ p {
   font-size: 2rem;
 }
 
-#footer {
+footer {
   margin-top: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   padding: 20px;
@@ -82,7 +86,7 @@ h3 {
   display: none;
 }
 
-@media (max-width:990px) {
+@media (max-width:900px) {
   .theme {
     position: static;
     background: white;
@@ -112,22 +116,43 @@ h3 {
     color: black;
     display: block;
     font-size: 5rem;
-    margin: auto;
+    margin: 50px auto 0;
     width: 100px;
   }
 
-  #top {
-    position: relative;
-    top: 175px;
+  /*
+#mid,#top{
+  position: relative;
+  top: 500px;} */
+  footer {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width:575px) {
+  .btn {
+    width: 120px;
+    height: 120px;
+    margin: 1%;
+    border: 0.5rem solid black;
+    border-radius: 20px;
   }
 
-  #mid {
-    top: 500px;
-    position: relative;
+  .theme {
+    padding: 10px 0;
+    margin-top: 15%;
   }
 
-  #footer {
-    top: 1000px;
-    position: relative;
+  h3 {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  footer {
+
+    width: 100%;
+    margin: auto;
   }
 }
