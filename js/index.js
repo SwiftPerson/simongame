@@ -21,7 +21,7 @@ var userLevel = 1;
 var isOn = false;
 var playdemo = [];
 var usrselect = [];
-var backgroundThemes = ["#fd3a69","black"];
+var backgroundThemes = ["#fd3a69", "black"];
 var bgColor = backgroundThemes[0];
 $("button").click(function(event) {
   var btn = event.target;
@@ -39,7 +39,7 @@ function registerKeys(btn) {
 
 $(document).on("keypress", function(event) {
 
-  if (event.key == "a") {
+  if (event.key == "a" || event.key == "A") {
     isOn = true;
     clear();
     setLevel(userLevel);
@@ -59,7 +59,11 @@ $(document).on("keypress", function(event) {
 
   }
   //check the level
-
+if(event.key == "e" || event.key == "E"){
+  clear();
+  isOn = false;
+  $("h1").text("Press 'A' to continue the game");
+}
 
 
 });
@@ -158,12 +162,12 @@ function setLevel(lvl) {
 
 function pressAnime(btn) {
   //  console.log(btn);
-  var bg = $("."+btn).css("background-color");
-  $("body").css("background-color",bg);
+  var bg = $("." + btn).css("background-color");
+  $("body").css("background-color", bg);
   $("." + btn).addClass("pressed");
   setTimeout(function() {
     $("." + btn).removeClass("pressed");
-    $("body").css("background-color",bgColor);
+    $("body").css("background-color", bgColor);
   }, 200);
 
 
@@ -209,8 +213,10 @@ function checkGame(btn) {
 
   } else {
     //run always
-    if (!(compare(usrselect, playdemo))) {
-      lose();
+    if (isOn) {
+      if (!(compare(usrselect, playdemo))) {
+        lose();
+      }
     }
   }
 }
@@ -257,22 +263,22 @@ function lose() {
   userLevel = 1;
   var audio = new Audio("sounds/error.wav");
   audio.play();
-  colorAlert("red",400);
-  $("h1").css("color","red");
+  colorAlert("red", 400);
+  $("h1").css("color", "red");
 }
 
 function win() {
   $("h1").text("Win! press 'A' key to continue");
   userLevel++;
-  $("h1").css("color","lime");
-  colorAlert("lime",400);
+  $("h1").css("color", "lime");
+  colorAlert("lime", 400);
 }
 
 function clear() {
 
   playdemo = [];
   usrselect = [];
-  $("h1").css("color","white");
+  $("h1").css("color", "white");
 
 }
 
@@ -286,29 +292,29 @@ function compare(ar1, ar2) {
   return true;
 }
 
-function colorAlert(color,delay){
-  $("body").css("background-color",color);
+function colorAlert(color, delay) {
+  $("body").css("background-color", color);
 
   setTimeout(function() {
-    $("body").css("background-color",bgColor);
+    $("body").css("background-color", bgColor);
   }, delay);
 
 }
 
 var Darktheme = false;
-$(".theme").on("click",function(){
+$(".theme").on("click", function() {
 
   Darktheme = !Darktheme;
 
-  if(Darktheme){
+  if (Darktheme) {
     bgColor = backgroundThemes[1];
-    changeColor("body",bgColor,"element");
+    changeColor("body", bgColor, "element");
     $(".theme").text("Go Light")
 
-  }else{
+  } else {
 
     bgColor = backgroundThemes[0];
-    changeColor("body",bgColor,"element");
+    changeColor("body", bgColor, "element");
     $(".theme").text("Go Dark")
 
   }
@@ -318,14 +324,14 @@ $(".theme").on("click",function(){
 });
 
 
-function changeColor(object,color,type){
-if(type === "element"){
-  $(object).css("background-color",color);
-}else if(type === "class"){
-  $("."+object).css("background-color",color);
-}else if(type === "tag"){
-  $("#"+object).css("background-color",color);
-}
+function changeColor(object, color, type) {
+  if (type === "element") {
+    $(object).css("background-color", color);
+  } else if (type === "class") {
+    $("." + object).css("background-color", color);
+  } else if (type === "tag") {
+    $("#" + object).css("background-color", color);
+  }
 
 }
 //end of file
