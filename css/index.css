@@ -36,7 +36,7 @@ p {
 footer {
   margin-top: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  padding: 20px;
+  padding: 50px 0;
 }
 
 .btn {
@@ -86,7 +86,7 @@ h3 {
   display: none;
 }
 
-@media (max-width:900px) {
+@media (max-width:990px) {
   .theme {
     position: static;
     background: white;
@@ -130,7 +130,7 @@ h3 {
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:600px) {
   .btn {
     width: 120px;
     height: 120px;
@@ -138,7 +138,12 @@ h3 {
     border: 0.5rem solid black;
     border-radius: 20px;
   }
-
+.pressed{
+  box-shadow: 3px grey;
+  /* opacity: 0.5; */
+  width: 130px;
+  height: 130px;
+}
   .theme {
     padding: 10px 0;
     margin-top: 15%;
