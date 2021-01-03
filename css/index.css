@@ -1,63 +1,52 @@
-:root{
-
-  --bg:#fd3a69;
-  --btn1:#00ff7c;
-  --btn2:blue;
-  --btn3:yellow;
-  --btn4:#be03fd;
-
-    /* --bg:#fd3a69;
+:root {
+  --bg: #fd3a69;
+  --btn1: #00ff7c;
+  --btn2: blue;
+  --btn3: yellow;
+  --btn4: #be03fd;
+  /* --bg:#fd3a69;
     --btn1:#120078;
     --btn2:#fecd1a;
     --btn3:#9d0191;
     --btn4:#008891; */
 }
 
-*{
+body {
   margin: 0;
-}
-
-body{
   background: var(--bg);
   font-family: 'Audiowide', cursive;
   color: white;
   text-align: center;
-
 }
 
-.btn{
+h1 {
+  margin: 5rem;
+  margin-bottom: 0;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+footer {
+  margin-top: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  padding: 20px;
+}
+
+.btn {
   width: 250px;
   height: 250px;
   margin: 1rem;
   border: 0.5rem solid black;
   border-radius: 20px;
-
 }
 
-h1{
-margin: 5rem;
-font-size: 3rem;
-
-}
-
-p{
-  font-size: 2rem;
-}
-
-
-footer{
-
-  margin: 40px 0 0 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
-  padding: 30px;
-}
-
-
-
-.theme{
+.theme {
   position: absolute;
   right: 10px;
-  top:5px;
+  top: 5px;
   background: white;
   padding: 10px;
   border: 5px solid;
@@ -66,25 +55,65 @@ footer{
   color: black;
 }
 
-
-.btn1{
- background-color: var(--btn1);
-}
-.btn2{
-background-color: var(--btn2);
-}
-.btn3{
-background-color: var(--btn3)
-}
-.btn4{
-background-color: var(--btn4)
+.btn1 {
+  background-color: var(--btn1);
 }
 
-.pressed{
+.btn2 {
+  background-color: var(--btn2);
+}
 
- box-shadow: 3px grey;
- /* opacity: 0.5; */
- width: 260px;
- height: 260px;
+.btn3 {
+  background-color: var(--btn3)
+}
+
+.btn4 {
+  background-color: var(--btn4)
+}
+
+.pressed {
+  box-shadow: 3px grey;
+  /* opacity: 0.5; */
+  width: 260px;
+  height: 260px;
+}
+
+h3 {
+  display: none;
+}
+
+@media (max-width:990px) {
+  .theme {
+    position: static;
+    background: white;
+    padding: 20px 0;
+    width: 30%;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  h4 {
+    display: none;
+  }
+
+  h3 {
+    background-color: orange;
+    border-radius: 100%;
+    border: 5px solid black;
+    color: black;
+    display: block;
+    font-size: 5rem;
+    margin: auto;
+    width: 100px;
+  }
 
 }
