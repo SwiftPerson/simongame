@@ -29,7 +29,7 @@ p {
   font-size: 2rem;
 }
 
-footer {
+#footer {
   margin-top: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   padding: 20px;
@@ -116,4 +116,18 @@ h3 {
     width: 100px;
   }
 
+  #top {
+    position: relative;
+    top: 175px;
+  }
+
+  #mid {
+    top: 500px;
+    position: relative;
+  }
+
+  #footer {
+    top: 1000px;
+    position: relative;
+  }
 }
